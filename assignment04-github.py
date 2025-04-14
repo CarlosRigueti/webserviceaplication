@@ -7,7 +7,7 @@ from github import Github
 from config import config as cfg
 
 # Load GitHub access token from config
-token = cfg["privatekey"]  # Make sure this matches your config.py key
+token = privatekey["privatekey"]  # Make sure this matches your config.py key
 
 # Authenticate with GitHub
 g = Github(token)
