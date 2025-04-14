@@ -4,14 +4,15 @@
 # Author: Carlos Rigueti
 # ------------------------------------------------------------------------
 
-import json
-import requests
+import requests, json
 
-# Fetch the Exchequer Account dataset from CSO
-api_endpoint = "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FIQ02/JSON-stat/2.0/en"
-res = requests.get(api_endpoint)
+# Get data from CSO API
+api_url = "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/FIQ02/JSON-stat/2.0/en"
+data = requests.get(api_url).json()
 
-# Save the retrieved JSON data to a file
-if res.ok:
-    with open("cso_data.json", "w") as output:
-        json.dump(res.json(), output, indent=2)
+# Save to file
+with open("cso.json", "w") as file:
+    json.dump(data, file)
+
+# Print the file name only
+print("cso.json")
