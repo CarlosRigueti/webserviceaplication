@@ -1,9 +1,13 @@
 import requests
 import json
 
+
+filename = "repos-private.json"
+filename = "webserviceaplication.json"
+
 # Define the URL before using it
-url = 'https://api.github.com/users/CarlosRigueti/repos?per_page=100'  # Example URL
-# If you want to use a different URL, just replace it accordingly
+url = 'https://api.github.com/users/CarlosRigueti/repos?per_page=100' 
+url = 'https://api.github.com/repos/CarlosRigueti/webserviceaplication/contents/code'
 # url = 'https://api.github.com/repos/CarlosRigueti/webserviceaplication/'
 
 # Make the GET request
@@ -20,6 +24,10 @@ repoJSON = response.json()
 print(json.dumps(repoJSON, indent=4))  # Pretty print the JSON data
 
 # If you want to save the data to a file:
-filename = "repos-private.json"
+filename = "repos-private.json.json"
+with open(filename, 'w') as f:
+    json.dump(repoJSON, f, indent=4)
+# If you want to save the data to a file:
+    filename = "webserviceaplication.json.json"
 with open(filename, 'w') as f:
     json.dump(repoJSON, f, indent=4)
