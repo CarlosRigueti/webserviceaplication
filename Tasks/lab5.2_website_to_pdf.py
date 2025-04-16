@@ -6,23 +6,21 @@ from config import apikeys as cfg
 
 target_url = "https://en.wikipedia.org"
 
-
-apikey = cfg['htmltopdfkey']   
+apiKey = cfg["htmltopdfkey"]  # Fetch the API key from the config
 api_url = "https://api.html2pdf.app/v1/generate"
 
-params = {'html': target_url,'apiKey': apikey}
-parsed_params = urllib.parse.urlencode(params)
+params = {'html': target_url, 'apiKey': apiKey}  # Correct usage of apiKey
+parsedparams = urllib.parse.urlencode(params)
 
-request_url = api_url + "?" + parsed_params
-print(request_url)
+requestUrl = api_url + "?" + parsedparams
 
-response = requests.get(request_url)
+print(requestUrl)
+response = requests.get(requestUrl)
+
 print(response.status_code)
-print(response.text)  # Print error details
-
 
 result = response.content
 
-with open ("document.pdf", "wb") as handler:
+with open("document.pdf", "wb") as handler:
     handler.write(result)
     print("File saved")

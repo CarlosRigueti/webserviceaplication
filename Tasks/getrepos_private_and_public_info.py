@@ -2,13 +2,15 @@ import requests
 import json
 
 
+
 filename = "repos-private.json"
 filename = "webserviceaplication.json"
 
 # Define the URL before using it
 url = 'https://api.github.com/users/CarlosRigueti/repos?per_page=100' 
 url = 'https://api.github.com/repos/CarlosRigueti/webserviceaplication/contents/code'
-# url = 'https://api.github.com/repos/CarlosRigueti/webserviceaplication/'
+#url = 'https://api.github.com/repos/CarlosRigueti/oprivateone/'
+
 
 # Make the GET request
 response = requests.get(url)
@@ -31,3 +33,5 @@ with open(filename, 'w') as f:
     filename = "webserviceaplication.json.json"
 with open(filename, 'w') as f:
     json.dump(repoJSON, f, indent=4)
+    
+    with open (filaname, )
