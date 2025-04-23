@@ -28,3 +28,9 @@ A breakdown of tasks and how I approached them
 The final project that ties everything together
 
 This project has been a great opportunity to put theory into practice and demonstrate what I’ve learned in data analysis and web development.
+
+***
+
+### Author
+
+Carlos Rigueti: I am currently studying Higher Diploma in Science in Data Analysis at Atlantic Technological University.
